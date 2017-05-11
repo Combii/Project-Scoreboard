@@ -78,7 +78,7 @@ function show() {
 }
 
 function update() {
-    $time.innerHTML = formatTime(x.time());
+    setTimer(formatTime(x.time()));
 }
 
 function start() {

@@ -7,6 +7,7 @@ var score1 = 0;
 var score2 = 0;
 
 window.onload = function start() {
+    setTimer("00:00");
     resetScore();
 };
 
@@ -33,15 +34,18 @@ function setScore2(){
 }
 
 
-function setTimer(string){
-    score2 = score2 + 1;
-
-    var canvas = document.getElementById("score2");
+function setTimer(time){
+    var canvas = document.getElementById("timerCanvas");
     var ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "white";
+    ctx.font = "100px Arial";
+    ctx.textAlign = "center";
+
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillText(string, canvas.width/2, (canvas.height/2) + 40);
+    ctx.fillText(time, canvas.width/2, (canvas.height/2) + 40);
 }
 
 
@@ -65,7 +69,4 @@ function resetScore() {
 
     ctx1.fillText("0", canvas1.width / 2, (canvas1.height/2) + 40);
     ctx2.fillText("0", canvas2.width / 2, (canvas2.height/2) + 40);
-}
-
-function startTimer(){
 }
