@@ -1,8 +1,8 @@
 #title {
-    text-align: center;
     color: blueviolet;
     font-size: 30pt;
     font-family: "Arial Black", Gadget, sans-serif;
+    text-align: center;
 }
 
 #score1,
@@ -37,7 +37,6 @@
     text-decoration: none;
     font-size: 16px;
     position: absolute;
-
 }
 
 canvas{
@@ -68,18 +67,19 @@ canvas{
 }
 
 .canvasButton3 {
-    margin-left: 40%;
+    left: 42%;
+    top:40%;
 }
 
 #startTimer{
-    right:80px;
-    top:159px;
+    right:25%;
+    top:159%;
 }
 
 
 #clearButton{
-    margin-top: 20%;
-    margin-left: 45%;
+    top: 20%;
+    right: 48%;
 }
 
 

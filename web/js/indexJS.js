@@ -2,35 +2,44 @@
  * Created by Combii on 27/04/2017.
  */
 
+team1 = {
+    "score":0,
+    "fouls":0
+};
 
-var score1 = 0;
-var score2 = 0;
+team2 = {
+    "score":0,
+    "fouls":0
+};
 
 window.onload = function start() {
     setTimer("00:00:00");
     resetScore();
 };
 
-function setScore1(){
-    score1 = score1 + 1;
-
-    var canvas = document.getElementById("score1");
-    var ctx = canvas.getContext("2d");
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillText(score1, canvas.width/2, (canvas.height/2) + 40);
+function setScoreTeamOne(){
+    setScore("score1");
 }
 
-function setScore2(){
-    score2 = score2 + 1;
+function setScoreTeamTwo(){
+    setScore("score2");
+}
 
-    var canvas = document.getElementById("score2");
+
+function setScore(team) {
+    var canvas = document.getElementById(team);
+
     var ctx = canvas.getContext("2d");
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillText(score2, canvas.width/2, (canvas.height/2) + 40);
+    if(team === "score1") {
+        team1.score  += 1;
+        ctx.fillText(team1.score + "", canvas.width / 2, (canvas.height / 2) + 40);
+    }
+    else if(team === "score2") {
+        team2.score  += 1;
+        ctx.fillText(team2.score + "", canvas.width / 2, (canvas.height / 2) + 40);
+    }
 }
 
 
@@ -50,8 +59,8 @@ function setTimer(time){
 
 
 function resetScore() {
-    score1 = 0;
-    score2 = 0;
+    team1.score = 0;
+    team2.score = 0;
 
     var canvas1 = document.getElementById("score1");
     var canvas2 = document.getElementById("score2");
