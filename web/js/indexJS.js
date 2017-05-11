@@ -33,6 +33,18 @@ function setScore2(){
 }
 
 
+function setTimer(string){
+    score2 = score2 + 1;
+
+    var canvas = document.getElementById("score2");
+    var ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillText(string, canvas.width/2, (canvas.height/2) + 40);
+}
+
+
 function resetScore() {
     var canvas1 = document.getElementById("score1");
     var canvas2 = document.getElementById("score2");
@@ -55,10 +67,5 @@ function resetScore() {
     ctx2.fillText("0", canvas2.width / 2, (canvas2.height/2) + 40);
 }
 
-function timer(){
-    var timer = new Timer();
-    timer.start();
-    timer.addEventListener('secondsUpdated', function (e) {
-        $('#basicUsage').html(timer.getTimeValues().toString());
-    });
+function startTimer(){
 }
