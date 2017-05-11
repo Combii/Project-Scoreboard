@@ -8,12 +8,20 @@
 #score1,
 #score2,
 #timerCanvas{
-    width: 200pt;
     height: 100pt;
     margin: 10px;
     border: 1px solid lightgray;
-    font-size: 14pt;
     font-weight: bold;
+    font-size: 14pt;
+}
+
+#score1,
+#score2 {
+    width: 200pt;
+}
+
+#timerCanvas{
+    width: 200pt;
 }
 
 
