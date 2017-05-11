@@ -2,12 +2,17 @@
  * Created by Combii on 27/04/2017.
  */
 
-$(document).ready(function () {
 
+var score = 0;
+
+function setScore(){
+    score = score + 1;
     var canvas = document.getElementById("score1");
     var ctx = canvas.getContext("2d");
-    ctx.font = "20px Arial";
-    ctx.fillText("30",150,20);
 
-})
+    ctx.clearRect(10, 10, canvas.width, canvas.height);
+
+    ctx.font = "30px Arial";
+    ctx.fillText(score,10,50);
+}
 
