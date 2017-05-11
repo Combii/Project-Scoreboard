@@ -9,7 +9,6 @@
     <script type="text/javascript" src="js/indexJS.js"></script>
 
 
-
     <meta charset="UTF-8">
     <title>Project Scoreboard</title>
 
@@ -18,15 +17,35 @@
 
 <h1 id="title">Project Scoreboard</h1>
 
+<div class="upperCanvases">
+    <div class="canvasButton1">
+        <canvas id="score1">
+        </canvas>
 
-<canvas id="score1">
-</canvas>
+        <p></p>
+
+        <input id="button1" type="button" value="Monarchs" onclick="setScore1();"/>
+    </div>
+
+    <div class="canvasButton2">
+        <canvas id="score2">
+        </canvas>
+
+        <p></p>
+
+        <input id="button2" type="button" value="Renegades" onclick="setScore2();"/>
+    </div>
+</div>
 
 
-<p></p>
+<input id="clearButton" type="button" value="Reset" onclick="clearScore();"/>
 
-<input id="button1" type="button" value="Monarchs" onclick="setScore();" />
+<div id="container">
 
+    <canvas id="timer"></canvas>
+    <input id="startTimer" type="button" value="Start Timer" onclick="startTimer();"/>
+
+</div>
 
 </body>
 </html>
