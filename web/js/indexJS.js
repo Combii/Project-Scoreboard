@@ -13,6 +13,7 @@ match = {
 
 
 
+
 window.onload = function start() {
     setTimer("00:00:00");
     resetScore();
@@ -21,14 +22,16 @@ window.onload = function start() {
 
 function setScoreTeamOne(){
     setScore("score1");
+    animation("score1");
 }
-
 function setScoreTeamTwo(){
     setScore("score2");
+    animation("score2");
 }
 
 function setHalf(){
     setScore("halfCanvas");
+
 }
 
 function setScore(team) {
@@ -49,6 +52,16 @@ function setScore(team) {
         match.half  += 1;
         ctx.fillText(match.half + "", canvas.width / 2, (canvas.height / 2) + 40);
     }
+}
+
+function animation(team) {
+    if(team === "score1") {
+      $("#score1").effect('shake',{times:3},500);
+    }
+    else if(team === "score2"){
+        $("#score2").effect('shake',{times:3},500);
+    }
+
 }
 
 
@@ -109,8 +122,8 @@ function resetScore() {
     setFoulTeamOne();
     setFoulTeamTwo();
 
-    setScoreTeamOne();
-    setScoreTeamTwo();
+    setScore("score1");
+    setScore("score2");
 
     setHalf();
 
