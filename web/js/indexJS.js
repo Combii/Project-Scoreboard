@@ -25,7 +25,6 @@ function setScoreTeamTwo(){
     setScore("score2");
 }
 
-
 function setScore(team) {
     var canvas = document.getElementById(team);
 
@@ -39,6 +38,31 @@ function setScore(team) {
     else if(team === "score2") {
         team2.score  += 1;
         ctx.fillText(team2.score + "", canvas.width / 2, (canvas.height / 2) + 40);
+    }
+}
+
+function setFoulTeamOne(){
+    setFoul("fouls1");
+}
+
+function setFoulTeamTwo() {
+    setFoul("fouls2");
+}
+
+
+function setFoul(team) {
+    var canvas = document.getElementById(team);
+
+    var ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if(team === "fouls1") {
+        team1.fouls  += 1;
+        ctx.fillText(team1.fouls + "", canvas.width / 2, (canvas.height / 2) + 40);
+    }
+    else if(team === "fouls2") {
+        team2.fouls  += 1;
+        ctx.fillText(team2.fouls + "", canvas.width / 2, (canvas.height / 2) + 40);
     }
 }
 
@@ -59,14 +83,20 @@ function setTimer(time){
 
 
 function resetScore() {
-    team1.score = 0;
-    team2.score = 0;
+    team1.score = -1;
+    team2.score = -1;
+    team1.fouls = -1;
+    team2.fouls = -1;
 
     var canvas1 = document.getElementById("score1");
     var canvas2 = document.getElementById("score2");
+    var canvas3 = document.getElementById("fouls1");
+    var canvas4 = document.getElementById("fouls2");
 
     var ctx1 = canvas1.getContext("2d");
     var ctx2 = canvas2.getContext("2d");
+    var ctx3 = canvas3.getContext("2d");
+    var ctx4 = canvas4.getContext("2d");
 
     ctx1.fillStyle = "white";
     ctx1.font = "100px Arial";
@@ -76,11 +106,20 @@ function resetScore() {
     ctx2.font = "100px Arial";
     ctx2.textAlign = "center";
 
-    ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
-    ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
 
-    ctx1.fillText("0", canvas1.width / 2, (canvas1.height/2) + 40);
-    ctx2.fillText("0", canvas2.width / 2, (canvas2.height/2) + 40);
+    ctx3.fillStyle = "white";
+    ctx3.font = "100px Arial";
+    ctx3.textAlign = "center";
+
+    ctx4.fillStyle = "white";
+    ctx4.font = "100px Arial";
+    ctx4.textAlign = "center";
+
+    setFoulTeamOne();
+    setFoulTeamTwo();
+
+    setScoreTeamOne();
+    setScoreTeamTwo();
 
     stop();
 }
