@@ -2,15 +2,16 @@
  * Created by Combii on 27/04/2017.
  */
 
-team1 = {
-    "score":0,
-    "fouls":0
+match = {
+    "teamOneScore":0,
+    "teamOneFouls":0,
+
+    "teamTwoScore":0,
+    "teamTwoFouls":0,
+    "half":0
 };
 
-team2 = {
-    "score":0,
-    "fouls":0
-};
+
 
 window.onload = function start() {
     setTimer("00:00:00");
@@ -25,6 +26,10 @@ function setScoreTeamTwo(){
     setScore("score2");
 }
 
+function setHalf(){
+    setScore("halfCanvas");
+}
+
 function setScore(team) {
     var canvas = document.getElementById(team);
 
@@ -32,12 +37,16 @@ function setScore(team) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if(team === "score1") {
-        team1.score  += 1;
-        ctx.fillText(team1.score + "", canvas.width / 2, (canvas.height / 2) + 40);
+        match.teamOneScore  += 1;
+        ctx.fillText(match.teamOneScore + "", canvas.width / 2, (canvas.height / 2) + 40);
     }
     else if(team === "score2") {
-        team2.score  += 1;
-        ctx.fillText(team2.score + "", canvas.width / 2, (canvas.height / 2) + 40);
+        match.teamTwoScore  += 1;
+        ctx.fillText(match.teamTwoScore + "", canvas.width / 2, (canvas.height / 2) + 40);
+    }
+    else if(team === "halfCanvas") {
+        match.half  += 1;
+        ctx.fillText(match.half + "", canvas.width / 2, (canvas.height / 2) + 40);
     }
 }
 
@@ -57,12 +66,12 @@ function setFoul(team) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if(team === "fouls1") {
-        team1.fouls  += 1;
-        ctx.fillText(team1.fouls + "", canvas.width / 2, (canvas.height / 2) + 40);
+        match.teamOneFouls  += 1;
+        ctx.fillText(match.teamOneFouls + "", canvas.width / 2, (canvas.height / 2) + 40);
     }
     else if(team === "fouls2") {
-        team2.fouls  += 1;
-        ctx.fillText(team2.fouls + "", canvas.width / 2, (canvas.height / 2) + 40);
+        match.teamTwoFouls  += 1;
+        ctx.fillText(match.teamTwoFouls + "", canvas.width / 2, (canvas.height / 2) + 40);
     }
 }
 
@@ -82,21 +91,27 @@ function setTimer(time){
 }
 
 function resetScore() {
-    team1.score = -1;
-    team2.score = -1;
-    team1.fouls = -1;
-    team2.fouls = -1;
+    match.teamOneScore = -1;
+    match.teamTwoScore = -1;
+    match.teamOneFouls = -1;
+    match.teamTwoFouls = -1;
+    match.half = -1;
+
 
     setUpCanvas("score1");
     setUpCanvas("score2");
     setUpCanvas("fouls1");
     setUpCanvas("fouls2");
+    setUpCanvas("halfCanvas");
+
 
     setFoulTeamOne();
     setFoulTeamTwo();
 
     setScoreTeamOne();
     setScoreTeamTwo();
+
+    setHalf();
 
     reset();
 

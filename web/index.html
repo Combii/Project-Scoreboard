@@ -24,24 +24,18 @@
 
 
     <div class="child_01">
-        <div class="canvasButton1">
-            <canvas id="score1"></canvas>
-
-            <input class="button" id="button1" type="button" value="Monarchs" onclick="setScoreTeamOne();"/>
-        </div>
+        <canvas id="score1"></canvas>
+        <input class="button" id="button1" type="button" value="Monarchs" onclick="setScoreTeamOne()"/>
     </div>
 
     <div class="child_02">
-        <div class="canvasButton2">
-            <canvas id="score2"></canvas>
-
-            <input class="button" id="button2" type="button" value="Renegades" onclick="setScoreTeamTwo();"/>
-        </div>
+        <canvas id="score2"></canvas>
+        <input class="button" id="button2" type="button" value="Renegades" onclick="setScoreTeamTwo()"/>
     </div>
 
     <div class="child_04">
-            <canvas id="fouls1"></canvas>
-            <input class="button" id="foulsButton1" type="button" value="Fouls" onclick="setFoulTeamOne()"/>
+        <canvas id="fouls1"></canvas>
+        <input class="button" id="foulsButton1" type="button" value="Fouls" onclick="setFoulTeamOne()"/>
     </div>
 
     <div class="child_05">
@@ -50,12 +44,15 @@
     </div>
 
     <div class="child_03">
-        <div class="canvasButton3">
-            <canvas id="timerCanvas"></canvas>
-            <input class="button" id="startTimer" type="button" value="Start" onclick="start();"/>
-        </div>
-        <input class="button" id="stopButton" type="button" value="Stop" onclick="stop();"/>
-        <input class="button" id="clearButton" type="button" value="Reset" onclick="resetScore();"/>
+        <canvas id="timerCanvas"></canvas>
+        <input class="button" id="startTimer" type="button" value="Start" onclick="start()"/>
+        <input class="button" id="stopButton" type="button" value="Stop" onclick="stop()"/>
+        <input class="button" id="clearButton" type="button" value="Reset" onclick="resetScore()"/>
+    </div>
+
+    <div class="child_06">
+        <input class="button" id="halfButton" type="button" value="Half" onclick="setHalf()"/>
+        <canvas id="halfCanvas"></canvas>
     </div>
 
 </div>
