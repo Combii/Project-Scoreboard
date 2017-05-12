@@ -41,6 +41,7 @@ function setScore(team) {
     }
 }
 
+
 function setFoulTeamOne(){
     setFoul("fouls1");
 }
@@ -48,7 +49,6 @@ function setFoulTeamOne(){
 function setFoulTeamTwo() {
     setFoul("fouls2");
 }
-
 
 function setFoul(team) {
     var canvas = document.getElementById(team);
@@ -81,39 +81,16 @@ function setTimer(time){
     ctx.fillText(time, canvas.width/2, (canvas.height/2) + 30);
 }
 
-
 function resetScore() {
     team1.score = -1;
     team2.score = -1;
     team1.fouls = -1;
     team2.fouls = -1;
 
-    var canvas1 = document.getElementById("score1");
-    var canvas2 = document.getElementById("score2");
-    var canvas3 = document.getElementById("fouls1");
-    var canvas4 = document.getElementById("fouls2");
-
-    var ctx1 = canvas1.getContext("2d");
-    var ctx2 = canvas2.getContext("2d");
-    var ctx3 = canvas3.getContext("2d");
-    var ctx4 = canvas4.getContext("2d");
-
-    ctx1.fillStyle = "white";
-    ctx1.font = "100px Arial";
-    ctx1.textAlign = "center";
-
-    ctx2.fillStyle = "white";
-    ctx2.font = "100px Arial";
-    ctx2.textAlign = "center";
-
-
-    ctx3.fillStyle = "white";
-    ctx3.font = "100px Arial";
-    ctx3.textAlign = "center";
-
-    ctx4.fillStyle = "white";
-    ctx4.font = "100px Arial";
-    ctx4.textAlign = "center";
+    setUpCanvas("score1");
+    setUpCanvas("score2");
+    setUpCanvas("fouls1");
+    setUpCanvas("fouls2");
 
     setFoulTeamOne();
     setFoulTeamTwo();
@@ -122,4 +99,14 @@ function resetScore() {
     setScoreTeamTwo();
 
     reset();
+
+    function setUpCanvas(canvasID)   // Only visible inside resetScore()
+    {
+        var canvas = document.getElementById(canvasID);
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "white";
+        ctx.font = "100px Arial";
+        ctx.textAlign = "center";
+    }
 }
