@@ -36,7 +36,7 @@
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    width: 45%;
+    width: 50%;
 }
 
 #clearButton{
@@ -70,8 +70,31 @@ canvas{
 }
 
 .child_03 {
+    display: block;
+    overflow: visible;
+    width: 20%;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    clear: both;
+}
+
+.child_04 {
+    width: 40%;
+    float: left;
+    clear: left;
+}
+
+.child_05 {
+    width: 40%;
+    float: right;
+    clear: right;
+}
+
+.child_06 {
     display: inline-block;
-    width: 50%;
+    overflow: visible;
+    width: 70%;
     margin-top: 15%;
     margin-right: auto;
     margin-left: auto;
