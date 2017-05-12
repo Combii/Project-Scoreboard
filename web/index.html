@@ -27,7 +27,7 @@
         <div class="canvasButton1">
             <canvas id="score1"></canvas>
 
-            <input id="button1" type="button" value="Monarchs" onclick="setScoreTeamOne();"/>
+            <input class="button" id="button1" type="button" value="Monarchs" onclick="setScoreTeamOne();"/>
         </div>
     </div>
 
@@ -35,26 +35,27 @@
         <div class="canvasButton2">
             <canvas id="score2"></canvas>
 
-            <input id="button2" type="button" value="Renegades" onclick="setScoreTeamTwo();"/>
+            <input class="button" id="button2" type="button" value="Renegades" onclick="setScoreTeamTwo();"/>
         </div>
     </div>
 
     <div class="child_04">
             <canvas id="fouls1"></canvas>
-            <input id="foulsButton1" type="button" value="Fouls" onclick="setFoulTeamOne()"/>
+            <input class="button" id="foulsButton1" type="button" value="Fouls" onclick="setFoulTeamOne()"/>
     </div>
 
     <div class="child_05">
         <canvas id="fouls2"></canvas>
-        <input id="foulsButton2" type="button" value="Fouls" onclick="setFoulTeamTwo()"/>
+        <input class="button" id="foulsButton2" type="button" value="Fouls" onclick="setFoulTeamTwo()"/>
     </div>
 
     <div class="child_03">
         <div class="canvasButton3">
             <canvas id="timerCanvas"></canvas>
-            <input id="startTimer" type="button" value="Start Timer" onclick="start();"/>
+            <input class="button" id="startTimer" type="button" value="Start" onclick="start();"/>
         </div>
-        <input id="clearButton" type="button" value="Reset" onclick="resetScore();"/>
+        <input class="button" id="stopButton" type="button" value="Stop" onclick="stop();"/>
+        <input class="button" id="clearButton" type="button" value="Reset" onclick="resetScore();"/>
     </div>
 
 </div>

@@ -121,5 +121,5 @@ function resetScore() {
     setScoreTeamOne();
     setScoreTeamTwo();
 
-    stop();
+    reset();
 }
