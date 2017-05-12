@@ -16,6 +16,7 @@ match = {
 window.onload = function start() {
     setTimer("00:00:00");
     resetScore();
+    setupCommercialCanvas();
 };
 
 function setScoreTeamOne(){
@@ -124,4 +125,15 @@ function resetScore() {
         ctx.font = "100px Arial";
         ctx.textAlign = "center";
     }
+}
+
+
+function setupCommercialCanvas() {
+    // Get canvas
+    var canvas=document.getElementById("commercialCanvas"); // grabs the canvas element
+    var context=canvas.getContext("2d"); // returns the 2d context object
+    var img=new Image(); //creates a variable for a new image
+
+    img.src= "https://i.ytimg.com/vi/8ZFf1p144LU/maxresdefault.jpg"; // specifies the location of the image
+    context.drawImage(img,0,0, canvas.width, canvas.height); // draws the image at the specified x and y location
 }
