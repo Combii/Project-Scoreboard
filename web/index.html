@@ -13,37 +13,41 @@
     <meta charset="UTF-8">
     <title>Project Scoreboard</title>
 
+
 </head>
 <body>
 
-<h1 id="title">Project Scoreboard</h1>
-
-<div class="canvasButton1">
-    <canvas id="score1">
-    </canvas>
+<div class="wrapper">
 
 
-    <input id="button1" type="button" value="Monarchs" onclick="setScoreTeamOne();"/>
+    <h1 id="title">Project Scoreboard</h1>
+
+
+    <div class="child_01">
+        <div class="canvasButton1">
+            <canvas id="score1"></canvas>
+
+            <input id="button1" type="button" value="Monarchs" onclick="setScoreTeamOne();"/>
+        </div>
+    </div>
+
+    <div class="child_02">
+        <div class="canvasButton2">
+            <canvas id="score2"></canvas>
+
+            <input id="button2" type="button" value="Renegades" onclick="setScoreTeamTwo();"/>
+        </div>
+    </div>
+
+    <div class="child_03">
+        <div class="canvasButton3">
+            <canvas id="timerCanvas"></canvas>
+            <input id="startTimer" type="button" value="Start Timer" onclick="start();"/>
+        </div>
+        <input id="clearButton" type="button" value="Reset" onclick="resetScore();"/>
+    </div>
+
 </div>
-
-<input id="clearButton" type="button" value="Reset" onclick="resetScore();"/>
-
-
-<div class="canvasButton2">
-    <canvas id="score2">
-    </canvas>
-
-
-    <input id="button2" type="button" value="Renegades" onclick="setScoreTeamTwo();"/>
-</div>
-
-
-<div class="canvasButton3">
-
-    <canvas id="timerCanvas"></canvas>
-    <input id="startTimer" type="button" value="Start Timer" onclick="start();"/>
-</div>
-
 
 </body>
 </html>

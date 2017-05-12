@@ -29,58 +29,58 @@
 #button2,
 #clearButton,
 #startTimer{
-    background-color: #428cf4; /* Green */
+    background-color: #428cf4;
     border: none;
     color: white;
     padding: 15px 22px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    position: absolute;
+    width: 35%;
+
+    display: block;
+    margin-right: auto;
+    margin-left: 20%;
+    clear: both;
+}
+
+#clearButton{
+    background-color: darkgreen;
+
 }
 
 canvas{
-    background-color: deepskyblue; /* Green */
-}
-
-.canvasButton1,
-.canvasButton2,
-.canvasButton3{
-    position:absolute;
+    background-color: deepskyblue;
 }
 
 
-.canvasButton1{
-    left:50px;
+.wrapper {
+    display: block;
+    width: 800px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-#button1{
-    right:80px;
+.child_01 {
+    display: block;
+    width: 50%;
+    float: left;
 }
 
-.canvasButton2{
-    right:50px;
+.child_02 {
+    width: 50%;
+    float: right;
 }
 
-#button2{
-    right:70px;
+.child_03 {
+    display: block;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    clear: both;
 }
 
-.canvasButton3 {
-    left: 42%;
-    top:40%;
-}
-
-#startTimer{
-    right:25%;
-    top:159%;
-}
-
-
-#clearButton{
-    top: 20%;
-    right: 48%;
-}
 
 
 
